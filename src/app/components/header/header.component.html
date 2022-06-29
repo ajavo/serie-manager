@@ -1,0 +1,18 @@
+<div class="position-relative">
+    <h1 class="text-center my-4 link-warning">Series </h1>
+  <div
+    *ngIf="isConnected"
+    class="position-absolute top-0 end-0 mt-2 ">
+      <button
+        [routerLink]="['/series','new']"
+        class="btn btn btn-primary btn-sm mx-2">
+        AJOUTER
+      </button>
+
+      <button
+        (click)="onClickSignOut()"
+        class="btn btn btn-secondary btn-sm">
+         ME DECONNECTER
+    </button>
+  </div>
+</div>

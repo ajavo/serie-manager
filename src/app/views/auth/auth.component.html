@@ -1,0 +1,50 @@
+<div class="row mt-5 ">
+
+  <div class="col-6 card shadow rounded-pill ps-5 pe-5 mx-auto p-3 p-3 mb-2 bg-black text-light">
+
+      <h3 class="text-center ">CONNEXION</h3>
+
+      <div *ngIf="errMsg" class="alert alert-danger p-3">{{errMsg}}</div>
+
+      <form #authForm="ngForm"(ngSubmit)="onSubmitAuthForm()">
+
+          <div class="mb-3 ">
+            <label for="user">User</label>
+            <input
+             id="user"
+              class="form-control"
+               placeholder="User"
+               name="user"
+               [(ngModel)]="user"
+               required
+               user>
+          </div>
+
+          <div class="mb-3 ">
+            <label for="password">Password</label>
+            <input
+            type="password"
+            id="password"
+            class="form-control"
+             placeholder="password"
+             name="password"
+             [(ngModel)]="password"
+             required>
+          </div>
+
+<div class="row col-7 mx-auto btn-sm ">
+  <button type="submit"
+   class="btn btn-dark btn-lg"
+   [disabled]="authForm.invalid">
+
+    GO
+  </button>
+</div>
+      </form>
+
+
+  </div>
+
+
+</div>
+

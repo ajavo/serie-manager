@@ -1,0 +1,17 @@
+<div class="row col-6 card shadow mx-auto">
+
+  <div class="card-body text-center">
+
+    <h5 class="card-title">NOUVELLE SERIE</h5>
+
+<app-serie-form
+buttonLabel="AJOUTER"
+  (formSubmitted)="onSubmitNewSerie($event)">
+</app-serie-form>
+
+
+    <button routerLink="/series" class="btn btn-dark mt-2">RETOUR</button>
+
+  </div>
+
+</div>

@@ -1,0 +1,30 @@
+<h5 class="mt-5"> ENVOYER UN COMMENTAIRE</h5>
+<form [formGroup]="form" (ngSubmit)="onSubmitRemarkForm()">
+  <div class="form-group mt-3">
+
+    <label for="">pseudonyme</label>
+    <input
+      id="author"
+      class="form-control"
+      formControlName="author"
+      [(ngModel)]="remark.author"/>
+
+  </div>
+
+  <div class="form-group my-3">
+    <label for="">Commentaire</label>
+    <textarea
+      id="remark"
+      class="form-control"
+      formControlName="remark"
+      [(ngModel)]="remark.contents">
+</textarea>
+
+
+  </div>
+  <div class="row col-4 mx-auto">
+    <button type="submit" class="btn btn-dark" [disabled]="form.invalid">
+      ENVOYER
+    </button>
+  </div>
+</form>

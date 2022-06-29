@@ -1,0 +1,36 @@
+<div class="row col-6 card shadow mx-auto mt-5">
+  <div class="card-body text-center">
+    <h5 class="card-title">{{serie.title}} </h5>
+
+    <img src="{{serie.img}}" class="card-img-top " style="width: 50%;">
+
+    <p class="card-text border mt-2 rounded-pill">Date de sortie:<br>{{serie.dateBegin | date:"dd-MM-yyyy" }}</p>
+    <p class="card-text border mt-2 rounded-pill">Nombre de saisons:<br>{{serie.seasons}} saisons</p>
+    <p class="card-text border mt-2 rounded-pill">Description:<br>{{serie.description}}</p>
+    <p class="card-text border mt-2 rounded-pill">Critiques press:<br>{{serie.critical}}</p>
+
+      <app-remark-form
+      (formSubmitted)="createRemark($event, serie)">
+      </app-remark-form>
+
+
+          <div *ngFor="let item of serie.remark index as i" class="texte-start mt-5 ">
+
+
+
+          <div class="row col-6 card shadow mx-auto my-5 py-2">
+            <div class="card-body">
+              <small class="text-muted">
+                Publiée le {{ item.date | date }} par {{ item.author }}:
+              </small>
+              <p class="card-text mt-2">{{ item.contents }}</p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    <button routerLink="/series" class="btn btn-dark ">RETOUR</button>
+

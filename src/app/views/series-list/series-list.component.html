@@ -1,0 +1,58 @@
+
+<div class="black">
+
+
+ <table class="table table-dark table-striped">
+   <thead class="table-dark">
+     <tr>
+       <th scope="col">ID</th>
+       <th scope="col">Title</th>
+       <th scope="col">Date de sortie</th>
+     </tr>
+   </thead>
+  <tbody>
+    <tr *ngFor="let serie of series; index as i">
+      <th scope="row">{{serie.id}}</th>
+
+      <td>{{serie.title}}</td>
+      <td>{{serie.dateBegin | date:"dd-MM-yyyy" }}</td>
+
+
+
+
+
+
+    <div class="card" style="width: 19rem;">
+      <img src="{{serie.img}}" class="card-img-top" alt="...">
+      <div class="card-body">
+
+       <td> <button
+      [routerLink]="['/series', serie.id]"
+      class="btn btn-outline-primary ">
+        DETAILS
+      </button>
+    </td>
+
+    <td>
+      <button
+      [routerLink]="['/series', 'edit', serie.id]"
+      class="btn btn-outline-warning ">
+        EDITER
+      </button>
+    </td>
+
+
+      <td>
+      <button
+      (click)="onClickDeletSerie(i)"
+      class="btn btn-outline-danger ">
+       SUPPR.
+      </button>
+
+      </div>
+    </div>
+   </tr>
+  </tbody>
+ </table>
+
+</div>
